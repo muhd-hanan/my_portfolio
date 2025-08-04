@@ -1,0 +1,139 @@
+.bbody {
+      background: linear-gradient(to right, #0d0c1d, #1a1a2e);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      border: 5px solid rgba(0, 123, 255, 0.5);
+      transform: scale(0);
+      animation: ripple-animation 5.2s ease-out forwards;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+
+    @keyframes ripple-animation {
+      0% {
+        transform: scale(0);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    .lbody {
+      background: linear-gradient(to right, #dff3ff, #b6e0f2);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      border: 5px solid rgba(0, 123, 255, 0.5);
+      transform: scale(0);
+      animation: ripple-animation 5.2s ease-out forwards;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+
+    @keyframes ripple-animation {
+      0% {
+        transform: scale(0);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    /* --------------------------------------------- */
+
+
+
+/* ------------------------------------------------*/
+
+.nav-item {
+  position: relative;
+  padding-bottom: 4px;
+  cursor: pointer;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #06b6d4; /* cyan-500 */
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Active (clicked) state */
+.nav-item.active::after {
+  width: 100%;
+}
+
+
+/* ----------------------------------------------- */
+
+ .nav-item {
+    position: relative;
+    padding-bottom: 4px;
+    cursor: pointer;
+  }
+
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #06b6d4;
+    /* cyan-500 */
+    width: 0;
+    transition: width 0.3s ease;
+  }
+
+  .nav-item:hover::after {
+    width: 100%;
+  }
+
+  .nav-item.active::after {
+    width: 100%;
+  }
+
+  /* Mobile Menu Transition */
+  .mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .mobile-menu.open {
+    max-height: 500px;
+    /* big enough to fit all items */
+  }
+
+
+/* ----------------------------------------------------- */
+
+
+.progress-bar {
+      width: 0;
+      transition: width 1.5s ease-in-out;
+    }
+
+
