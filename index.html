@@ -5,30 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio-Muhammed Hanan M</title>
-   <link rel="icon" type="image/png" href="./images/portfolio.png" >
+  <link rel="icon" type="image/png" href="./images/portfolio.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKKLT96QT8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-BKKLT96QT8');
+  </script>
+
 
 </head>
-
-<style>
-  .pop {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.4s ease-out;
-  }
-
-  .pop.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
-
 
 
 <body class="bbody ">
@@ -40,10 +35,10 @@
     <div id="ripple-container" class="fixed top-0 left-0 w-full h-full blur-sm pointer-events-none z-0"></div>
 
 
-    <header id="home" class="riseup h-auto py-4 backdrop-blur-lg">
+    <header id="home" class="riseup h-auto py-2 backdrop-blur-lg border-b border-white/10">
       <div class="flex justify-between items-center px-4">
         <!-- Logo -->
-        <h1 class="text-white font-bold text-sm sm:text-lg">My Portfolio</h1>
+        <h1 class="text-white font-bold text-sm sm:text-lg pt-2">My Portfolio</h1>
 
         <!-- Desktop Menu -->
         <ul class="hidden sm:hidden md:flex gap-12 pt-2">
@@ -65,7 +60,7 @@
         </ul>
 
         <!-- Mobile Menu Icon -->
-        <button id="menu-btn" class="block md:hidden sm:block text-white text-2xl focus:outline-none">
+        <button id="menu-btn" class="block md:hidden sm:block py-1 text-white text-2xl focus:outline-none">
           <i class="fa-solid fa-bars text-sm "></i>
         </button>
       </div>
@@ -97,23 +92,24 @@
         <div class="pop w-full text-center md:text-center mx-auto mt-14  ">
           <h4 class="text-white text-lg mb-2">Hello,</h4>
           <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
-            I'm <span class=" bg-gradient-to-r from-cyan-500 to-blue-500 text-3xl sm:text-6xl text-transparent bg-clip-text">Muhammed
+            I'm <span
+              class=" bg-gradient-to-r from-cyan-400 to-cyan-700 text-4xl sm:text-6xl text-transparent bg-clip-text">Muhammed
               Hanan M</span>
           </h1>
-          <p id="typing-text" class="text-white my-2 sm:my-5 text-[16px] sm:text-[25px] font-mono"></p>
-          <p class="text-white mb-6 text-[12px] sm:text-[16px] px-2 sm:px-16 ">
+          <p id="typing-text" class="text-white my-3 sm:my-5 text-[19px] sm:text-[25px] font-mono"></p>
+          <p class="text-white mb-6 text-[14px] sm:text-[18px] px-4 sm:px-16 text-no  sm:text-center text-justify   ">
             I build responsive, user-friendly web applications from start to finish. Using Django for the
             backend and
             React, Tailwind CSS, and HTML/JavaScript on the frontend, I turn ideas into smooth, functional
             web experiences.
           </p>
-          <div class="flex  justify-center  mt-4 gap-4">
-            <a class="border-2 border-white rounded-xl sm:rounded-2xl py-1 px-4 sm:py-2 sm:px-6 text-sm sm:text-base text-white text-whiteborder-white/30 hover:bg-white/10   "
-              href="">
+          <div class="flex  justify-center  mt-4 gap-6">
+            <a class="border border-white rounded-xl py-2   px-5 sm:py-2 sm:px-6 text-sm sm:text-base  text-white text-whiteborder-white/30 hover:bg-white/10   "
+              href="./images/Resume - muhammed hanan m.pdf" download="Muhammed_Hanan_Resume.pdf">
               Resume
             </a>
 
-            <a class="border-2 border-white rounded-xl sm:rounded-2xl py-1 px-4 sm:py-2 sm:px-6 text-sm sm:text-base text-whiteborder-white/30 hover:bg-white/10 text-white"
+            <a class="border border-white rounded-xl py-2   px-5 sm:py-2 sm:px-6 text-sm sm:text-base text-whiteborder-white/30 hover:bg-white/10 text-white"
               href="#projects">
               Projects
             </a>
@@ -149,12 +145,14 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 class="text-xl sm:text-2xl font-semibold mb-6 text-primary">Professional Summary</h3>
-                <p class="text-lg sm:text-lg leading-relaxed mb-6  ">
+                <p class="text-md sm:text-lg leading-relaxed mb-6 w-full text-justify  "
+                  style="text-align: justify; text-justify: inter-word; word-spacing: normal;">
                   Hello! I'm Muhammed Hanan M, a dedicated Python Full Stack Developer with a passion for creating
                   innovative digital solutions. With hands-on experience at leading tech companies and a strong
                   academic foundation, I bring both theoretical knowledge and practical expertise to every project.
                 </p>
-                <p class="text-lg leading-relaxed mb-6">
+                <p class="text-md sm:text-lg leading-relaxed mb-6 w-full text-justify "
+                  style="text-align: justify; text-justify: inter-word; word-spacing: normal;">
                   I specialize in building robust web applications using modern technologies like Django, React,
                   and PostgreSQL. My approach combines clean code practices with user-centered design to deliver
                   solutions that are both functional and engaging.
@@ -208,7 +206,7 @@
                     <h4 class="font-semibold ">Focus Areas</h4>
                   </div>
                   <ul class="space-y-3 pl-3 list-disc list-inside text-sm  sm:text-xl">
-                    <li>Full Stack  Development</li>
+                    <li>Full Stack Development</li>
                     <li>Front End Development</li>
                     <li>Backend Development</li>
                     <li>UI/UX Implementation</li>
@@ -483,7 +481,7 @@
                 class="w-full  absolute top-0  transition-transform duration-500 group-hover:scale-110">
 
 
-              <div class="absolute bottom-0 left-0 right-0 p-3  backdrop-blur-md  hover:bg-black/30 overflow-hidden
+              <div class="absolute bottom-0 left-0 right-0 p-3  backdrop-blur-md  hover:bg-black/60 overflow-hidden
                     text-white transition-all duration-500 ease-in-out
                     h-28 group-hover:h-60">
 
@@ -523,7 +521,7 @@
                 class="w-full  absolute top-0  transition-transform duration-500 group-hover:scale-110">
 
 
-              <div class="absolute bottom-0 left-0 right-0 p-3  backdrop-blur-md  hover:bg-black/30 overflow-hidden
+              <div class="absolute bottom-0 left-0 right-0 p-3  backdrop-blur-md  hover:bg-black/60 overflow-hidden
                     text-white transition-all duration-500 ease-in-out
                     h-28 group-hover:h-60">
 
@@ -557,16 +555,16 @@
 
 
 
-          <div class="p-2 border border-[#5a565639] rounded-2xl backdrop-blur-md ">
+          <div class="p-2 border border-[#5a565639] rounded-2xl backdrop-blur-md  ">
             <div
               class="group relative w-full h-[300px]  rounded-xl overflow-hidden  shadow-xl   transition-all duration-500 ease-in-out ">
 
 
               <img src="./images/todo/todo1.jpeg" alt=""
-                class="w-full  absolute top-0  transition-transform duration-500 group-hover:scale-110">
+                class="w-full  absolute top-0  transition-transform duration-500 group-hover:scale-110 ">
 
 
-              <div class="absolute bottom-0 left-0 right-0 p-3  backdrop-blur-md  hover:bg-black/30 overflow-hidden
+              <div class="absolute bottom-0 left-0 right-0 p-3  backdrop-blur-md  hover:bg-black/60 overflow-hidden
                     text-white transition-all duration-500 ease-in-out
                     h-28 group-hover:h-60">
 
@@ -812,7 +810,7 @@
       popElements.forEach((el, index) => {
         setTimeout(() => {
           el.classList.add("show");
-        }, index * 200); // Stagger effect
+        }, index * 200); 
       });
     });
   </script>
