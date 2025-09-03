@@ -160,3 +160,120 @@ const observer = new IntersectionObserver((entries) => {
     }, { threshold: 0.3 });
 
     observer.observe(document.getElementById('skills'));
+
+
+
+
+    // ===============================================
+
+
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector('.slider-track');
+      const slides = Array.from(track.children);
+      const dotsNav = document.getElementById('pagination-dots');
+      const nextButton = document.getElementById('nextBtn');
+      const prevButton = document.getElementById('prevBtn');
+
+      let currentIndex = Math.floor(slides.length / 2);
+      let isDragging = false, startPos = 0;
+      const dragThreshold = 50;
+
+      // Dots
+      slides.forEach((slide, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('w-2.5','h-2.5','sm:w-3','sm:h-3','rounded-full',
+                          'bg-gray-600','transition-colors','duration-300','hover:bg-gray-400');
+        dot.addEventListener('click', () => { currentIndex = index; updateSlider(); });
+        dotsNav.appendChild(dot);
+
+        slide.addEventListener('click', (e) => {
+          if (Math.abs(startPos - getPositionX(e)) < 10) {
+            currentIndex = index; updateSlider();
+          }
+        });
+      });
+
+      const dots = Array.from(dotsNav.children);
+
+      const getPositionX = (event) =>
+        event.type.includes('touch')
+          ? (event.touches[0] ? event.touches[0].clientX : event.changedTouches[0].clientX)
+          : event.pageX;
+
+      const dragStart = (event) => {
+        isDragging = true;
+        startPos = getPositionX(event);
+        slides.forEach(slide => slide.style.transition = 'none');
+      };
+
+      const dragEnd = (event) => {
+        if (!isDragging) return;
+        isDragging = false;
+        slides.forEach(slide => slide.style.transition = '');
+        const endPos = getPositionX(event);
+        const movedBy = endPos - startPos;
+        if (Math.abs(movedBy) > dragThreshold) {
+          movedBy < 0 ? moveToNextSlide() : moveToPrevSlide();
+        } else updateSlider();
+      };
+
+      track.addEventListener('mousedown', dragStart);
+      track.addEventListener('touchstart', dragStart, { passive: true });
+      track.addEventListener('mouseup', dragEnd);
+      track.addEventListener('mouseleave', dragEnd);
+      track.addEventListener('touchend', dragEnd);
+
+      const updateSlider = () => {
+        const isMobile = window.innerWidth < 640; // mobile breakpoint
+        const numSlides = slides.length;
+
+        slides.forEach((slide, index) => {
+          let offsetFromCenter = index - currentIndex;
+          if (offsetFromCenter > numSlides / 2) offsetFromCenter -= numSlides;
+          if (offsetFromCenter < -numSlides / 2) offsetFromCenter += numSlides;
+
+          let scale, zIndex, translateX, translateZ, opacity, filter;
+          if (isMobile) {
+            zIndex = 10 - Math.abs(offsetFromCenter);
+            filter = `brightness(${1 - Math.abs(offsetFromCenter) * 0.4})`;
+            if (Math.abs(offsetFromCenter) > 1) {
+              opacity = 0; scale = 0.7; translateX = offsetFromCenter * 60; translateZ = -400;
+            } else {
+              opacity = 1; scale = 1 - Math.abs(offsetFromCenter) * 0.25; translateZ = -Math.abs(offsetFromCenter) * 150;
+              translateX = offsetFromCenter * 80;
+            }
+          } else {
+            zIndex = 10 - Math.abs(offsetFromCenter);
+            filter = `brightness(${1 - Math.abs(offsetFromCenter) * 0.25})`;
+            if (Math.abs(offsetFromCenter) > 2) {
+              opacity = 0; scale = 0.5; translateX = offsetFromCenter * 30; translateZ = -500;
+            } else {
+              opacity = 1; scale = 1 - Math.abs(offsetFromCenter) * 0.2; translateZ = -Math.abs(offsetFromCenter) * 150;
+              translateX = offsetFromCenter * 40;
+            }
+          }
+
+          slide.style.transform = `translateX(${translateX}%) scale(${scale}) translateZ(${translateZ}px)`;
+          slide.style.zIndex = zIndex;
+          slide.style.opacity = opacity;
+          slide.style.filter = filter;
+          slide.style.left = '50%';
+          slide.style.marginLeft = `-${slide.offsetWidth / 2}px`;
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('bg-white', i === currentIndex);
+          dot.classList.toggle('bg-gray-600', i !== currentIndex);
+        });
+      };
+
+      const moveToNextSlide = () => { currentIndex = (currentIndex + 1) % slides.length; updateSlider(); };
+      const moveToPrevSlide = () => { currentIndex = (currentIndex - 1 + slides.length) % slides.length; updateSlider(); };
+
+      nextButton.addEventListener('click', moveToNextSlide);
+      prevButton.addEventListener('click', moveToPrevSlide);
+      window.addEventListener('resize', updateSlider);
+      setTimeout(updateSlider, 100);
+    });
+  

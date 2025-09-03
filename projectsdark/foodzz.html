@@ -1,11 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodzz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
 </head>
-<body>
-    
+
+<style>
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #06b6d4, #3b82f6);
+        border-radius: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #0891b2, #2563eb);
+    }
+</style>
+
+
+
+
+
+<body class="bbody ">
+
+
+    <div class="px-[7%] w-full relative h-auto sm:min-h-screen bg-cover bg-center bg-fixed  overflow-clip "
+        style="background-image: url('../images/bg.png')">
+        <!-- Animated Background Circles -->
+        <div id="ripple-container" class="fixed top-0 left-0 w-full h-full blur-sm pointer-events-none z-0"></div>
+
+
+        <header class="riseup h-auto py-4 backdrop-blur-lg">
+            <a href="../index.html" class="text-white flex gap-2">
+                <i class="fa-solid fa-angle-left text-2xl text-white pt-2"></i>
+                <span class="pt-3">Back to projects</span>
+            </a>
+
+
+        </header>
+
+        <section class=" mt-4 ">
+
+
+            <section class=" w-full sm:w-[85%] mx-auto  pb-44 ">
+
+
+
+                <div class="w-auto rounded-[26px] border-[#ffffff2c] h-auto backdrop-blur-sm border">
+
+
+                    <section class="relative max-w-6xl mx-auto mt-6 px-4">
+                        <div id="carousel" class="flex gap-4 overflow-x-auto custom-scrollbar scroll-smooth pb-6">
+                            
+                            <img src="../images/foodz/1.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/2.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/3.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/4.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/5.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/6.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/7.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/8.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/9.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/10.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/11.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/12.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/13.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/14.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/15.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/16.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/23.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/17.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/18.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/19.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/20.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/21.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/22.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+                            <img src="../images/foodz/24.png" class="w-[500px] rounded-xl shadow-lg flex-shrink-0" />
+
+
+                        </div>
+                    </section>
+
+
+
+                    <div class="fade-rise text-white rounded-2xl p-8 md:p-12 fade-in ">
+                        <div class="grid md:grid-cols-1 gap-2 items-center">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-primary">Food Delevery Website</h3>
+                                <p class="text-lg leading-relaxed mb-6  ">
+                                    I’m excited to showcase Foodzz, an end-to-end food ordering and delivery management
+                                    platform I’ve been building, designed to provide a smooth and modern food-tech
+                                    experience for all users. Customers can browse different restaurants, explore
+                                    categories, and select from a wide variety of food items, add them to their cart,
+                                    place orders, enter delivery addresses, make secure checkouts, and track their food
+                                    in real time until it arrives. Restaurants have their own panel where they can add
+                                    and manage food items, view and process incoming orders, and monitor overall
+                                    performance. Delivery partners get a dedicated dashboard that allows them to accept
+                                    orders, update their delivery status, and manage their delivery history. At the top
+                                    of the system, the Admin Panel provides full operational control, with options to
+                                    add and manage restaurants, register and monitor delivery partners, create and
+                                    organize categories, manage promotional sliders, and oversee the entire order
+                                    ecosystem. Foodzz is powered by a robust Django backend, a responsive TailwindCSS
+                                    frontend, JavaScript for interactive features, and PostgreSQL as the database to
+                                    ensure scalability and performance. This project has helped me combine design,
+                                    functionality, and technology into one integrated solution that connects customers,
+                                    restaurants, and delivery partners seamlessly.
+                                </p>
+
+
+                            </div>
+                            <div class="space-y-10">
+
+                                <div
+                                    class="backdrop-blur-lg  bg-[#00000034] border-[#ffffff2c]  rounded-xl p-6 border ">
+                                    <div
+                                        class="flex items-center mb-3 text-2xl font-extrabold  bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
+                                        <i class="fa-solid fa-code  text-xl mr-3"></i>
+                                        <h4 class="font-semibold ">Technologies</h4>
+                                    </div>
+                                    <ul class="space-y-3 pl-3 list-disc list-inside">
+                                        <li>Backend: Python, Django Framework </li>
+                                        <li>Frontend: HTML5, CSS3, JavaScript, Tailwind CSS </li>
+                                        <li>Database: PostgreSQL</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-center gap-2  pt-9">
+                                <a href="https://github.com/muhd-hanan/Foodzz_delevery" target="_blank"
+                                    class=" px-5  bg-transparent border text-white border-[white] rounded-lg py-2 hover:bg-white/10">Get
+                                    Code</a>
+                                <!-- <a href="" class=" px-5 bg-transparent border text-white border-[white] rounded-lg py-2  hover:bg-white/10 "></a> -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+    </div>
+    <script>
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('carousel');
+            const scrollAmount = 500 + 16; // image width + gap
+            if (direction === 1) {
+                carousel.appendChild(carousel.firstElementChild);
+            } else {
+                carousel.prepend(carousel.lastElementChild);
+            }
+        }
+    </script>
+
+
+
+
+
+    <script src="../js/script.js">
+
+    </script>
+
+
+
+
+
+
+
+
 </body>
+
 </html>
